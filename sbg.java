@@ -1,37 +1,34 @@
+import java.util.HashMap;
+import java.util.Map;
 
 public class sbg {
 public static void main(String[] args) {
    
-    String s="69";
+    String s="6699";
+    Map<Character,Character> map=new HashMap<>();
+    map.put('1','1');
+    map.put('8', '8');
+     map.put('0', '0');
+      map.put('9', '6');
+       map.put('6', '9');
+    // for(int k=0;k<s.length();k++){
+    //     char add=s.charAt(k);
+    //     if(map.get())
+    // }
    int i=0,j=s.length()-1;
    boolean flag=true;
-   while(i<j){
+   while(i<=j){
       char a=s.charAt(i);
       char b=s.charAt(j);
-      if(a=='1'&&b=='1'){
+    if(map.containsKey(a)&&map.get(a)==b){
         i++;
         j--;
-      }else if(a=='8'&&b=='8'){
-        i++;
-        j--;
-      }else if(a=='9'&&b=='6'){
-        i++;
-        j--;
-      }else if(a=='6'&&b=='9'){
-        i++;
-        j--;
-      }else if(a=='0'&&b=='0'){
-        i++;
-        j--;
-      }else{
+    }else{
         flag=false;
         break;
-      }
+    }
    }
-   if(i==j){
-    char mid=s.charAt(i);
-    if(!(mid=='0'||mid=='1'||mid=='8')) flag=false;
-   }
+  
    if(flag) System.out.println("StroboGrammatic Number");
    else System.out.println("Not StroboGrammatic Number");
 }
